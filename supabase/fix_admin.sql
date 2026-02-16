@@ -16,10 +16,10 @@ SELECT 'Carlos', true
 WHERE NOT EXISTS (SELECT 1 FROM barbeiros WHERE nome = 'Carlos');
 
 -- 3) Atualizar ou inserir admin
--- Email: admin@conectabarber.com | Senha: admin123
+-- Email: admin@zaply.com | Senha: admin123
 UPDATE barbeiros
 SET
-  email = 'admin@conectabarber.com',
+  email = 'admin@zaply.com',
   senha_hash = '$2b$10$CkU/yAbvPVyXHOHwJls6M.wdpKiI.Ihrbrks1AvaPzbaupq6gw0za',
   role = 'admin',
   ativo = true
@@ -28,4 +28,4 @@ WHERE nome = 'Carlos';
 -- Verificar se funcionou (deve retornar 1 linha)
 SELECT id, nome, email, role, ativo, (senha_hash IS NOT NULL) as tem_senha
 FROM barbeiros
-WHERE email = 'admin@conectabarber.com';
+WHERE email = 'admin@zaply.com';

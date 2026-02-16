@@ -106,11 +106,11 @@ export default function ServicosPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-stone-800">Serviços e valores</h1>
+        <h1 className="text-xl font-bold text-[#333333]" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Serviços e valores</h1>
         <button
           type="button"
           onClick={abrirNovo}
-          className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700"
+          className="btn-primary rounded-xl px-4 py-2 text-sm font-medium text-white"
         >
           + Novo serviço
         </button>
@@ -129,8 +129,8 @@ export default function ServicosPage() {
       {carregando ? (
         <p className="text-stone-500">Carregando…</p>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-stone-200 bg-white">
-          <table className="w-full text-left text-sm">
+        <div className="overflow-x-auto rounded-xl border border-stone-200 bg-white">
+          <table className="w-full text-left text-sm text-stone-800">
             <thead>
               <tr className="border-b border-stone-200 bg-stone-50">
                 <th className="px-4 py-3 font-medium text-stone-700">Serviço</th>
@@ -149,14 +149,14 @@ export default function ServicosPage() {
                 >
                   <td className="px-4 py-3">{s.nome}</td>
                   <td className="px-4 py-3">{s.duracao_minutos} min</td>
-                  <td className="px-4 py-3 font-medium text-amber-600">
+                  <td className="px-4 py-3 font-medium text-primary-dark">
                     R$ {(s.preco_centavos / 100).toFixed(2)}
                   </td>
                   <td className="px-4 py-3">
                     <button
                       type="button"
                       onClick={() => abrirEditar(s)}
-                      className="text-amber-600 hover:underline"
+                      className="text-primary-dark hover:text-primary-alt hover:underline"
                     >
                       Editar
                     </button>
@@ -175,7 +175,7 @@ export default function ServicosPage() {
               {editando ? "Editar serviço" : "Novo serviço"}
             </h2>
 
-            <form onSubmit={salvar} className="space-y-4">
+            <form onSubmit={salvar} className="space-y-4 text-stone-800">
               {erroModal && (
                 <div className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
                   {erroModal}
@@ -192,7 +192,7 @@ export default function ServicosPage() {
                   onChange={(e) => setNome(e.target.value)}
                   required
                   placeholder="Corte, Barba, Corte + Barba..."
-                  className="w-full rounded-lg border border-stone-300 px-3 py-2"
+                  className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-800"
                 />
               </div>
 
@@ -235,7 +235,7 @@ export default function ServicosPage() {
                 <button
                   type="submit"
                   disabled={salvando}
-                  className="flex-1 rounded-lg bg-amber-600 px-4 py-2 font-medium text-white hover:bg-amber-700 disabled:opacity-60"
+                  className="btn-primary flex-1 rounded-xl px-4 py-2 font-medium text-white disabled:opacity-60"
                 >
                   {salvando ? "Salvando…" : editando ? "Atualizar" : "Cadastrar"}
                 </button>

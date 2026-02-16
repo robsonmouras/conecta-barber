@@ -1,15 +1,31 @@
 @import "tailwindcss";
 
+/* Manual de marca Zaply */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #333333;
+  /* Paleta Zaply */
+  --color-primary: #25D366;       /* Verde primário - botões e CTAs */
+  --color-secondary: #00D55E;     /* Verde secundário - hover */
+  --color-primary-light: #E6FBF0; /* Backgrounds de badges/alertas */
+  --color-primary-dark: #009F46;  /* Texto sobre fundos claros */
+  --color-accent: #39FF14;        /* Verde néon - acentos */
+  --color-neutral-1: #FFFFFF;     /* Backgrounds */
+  --color-neutral-text: #333333;  /* Texto principal */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-primary-alt: var(--color-secondary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-accent: var(--color-accent);
+  --color-neutral-text: var(--color-neutral-text);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +38,14 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Botões CTAs - gradiente sutil verde conforme manual Zaply */
+.btn-primary {
+  background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  border-radius: 12px;
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 }

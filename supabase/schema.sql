@@ -1,5 +1,5 @@
 -- =============================================
--- ConectaBarber - Schema de tabelas para Supabase
+-- Zaply - Schema de tabelas para Supabase
 -- Execute no SQL Editor do painel Supabase
 -- =============================================
 

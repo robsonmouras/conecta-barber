@@ -14,8 +14,8 @@ export interface SessionData {
 }
 
 const SESSION_OPTIONS = {
-  password: process.env.SESSION_SECRET ?? "conectabarber-secret-min-32-chars!!",
-  cookieName: "conectabarber_session",
+  password: process.env.SESSION_SECRET ?? "zaply-secret-min-32-chars!!",
+  cookieName: "zaply_session",
   cookieOptions: {
     secure: process.env.NODE_ENV === "production",
     httpOnly: true,

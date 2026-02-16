@@ -223,11 +223,11 @@ export default function AgendaPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-stone-800">Agenda do dia</h1>
+        <h1 className="text-xl font-bold text-[#333333]" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Agenda do dia</h1>
         <button
           type="button"
           onClick={() => setModalAberto(true)}
-          className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700"
+          className="btn-primary rounded-xl px-4 py-2 text-sm font-medium text-white"
         >
           + Novo agendamento
         </button>
@@ -275,7 +275,7 @@ export default function AgendaPage() {
           Nenhum agendamento neste dia.
         </p>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-stone-200 bg-white">
+        <div className="overflow-x-auto rounded-xl border border-stone-200 bg-white">
           <table className="w-full text-left text-sm text-stone-800">
             <thead>
               <tr className="border-b border-stone-200 bg-stone-50">
@@ -318,10 +318,10 @@ export default function AgendaPage() {
                       <span
                         className={`inline rounded px-2 py-0.5 text-xs font-medium ${
                           ag.status === "confirmado"
-                            ? "bg-green-100 text-green-800"
+                            ? "bg-primary-light text-primary-dark"
                             : ag.status === "cancelado"
                               ? "bg-red-100 text-red-800"
-                              : "bg-amber-100 text-amber-800"
+                              : "bg-stone-100 text-stone-700"
                         }`}
                       >
                         {ag.status}
@@ -336,7 +336,7 @@ export default function AgendaPage() {
                               onClick={() =>
                                 alterarStatus(ag.id, "confirmado")
                               }
-                              className="rounded bg-green-600 px-2 py-1 text-xs text-white hover:bg-green-700"
+                              className="btn-primary rounded-lg px-2 py-1 text-xs text-white"
                             >
                               Confirmar
                             </button>
@@ -423,7 +423,7 @@ export default function AgendaPage() {
                       <span className="text-sm text-stone-500">
                         {s.duracao_minutos} min
                       </span>
-                      <span className="font-medium text-amber-600">
+                      <span className="font-medium text-primary-dark">
                         R$ {(s.preco_centavos / 100).toFixed(2)}
                       </span>
                     </label>
@@ -516,7 +516,7 @@ export default function AgendaPage() {
                     servicosSelecionados.length === 0 ||
                     (usuarioAdmin && !barbeiroSelecionado)
                   }
-                  className="flex-1 rounded-lg bg-amber-600 px-4 py-2 font-medium text-white hover:bg-amber-700 disabled:opacity-60"
+                  className="btn-primary flex-1 rounded-xl px-4 py-2 font-medium text-white disabled:opacity-60"
                 >
                   {salvando ? "Salvando…" : "Agendar"}
                 </button>

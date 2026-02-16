@@ -55,7 +55,7 @@ export default function RelatoriosPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-xl font-bold text-stone-800">
+      <h1 className="mb-6 text-xl font-bold text-[#333333]" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
         Relatório de valores
       </h1>
 
@@ -96,13 +96,13 @@ export default function RelatoriosPage() {
       ) : resumo ? (
         <div className="space-y-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+            <div className="rounded-xl border border-stone-200 bg-white p-4">
               <p className="text-sm text-stone-500">Total (confirmados)</p>
-              <p className="text-2xl font-bold text-amber-600">
+              <p className="text-2xl font-bold text-primary-dark">
                 R$ {resumo.total_reais}
               </p>
             </div>
-            <div className="rounded-lg border border-stone-200 bg-white p-4 shadow-sm">
+            <div className="rounded-xl border border-stone-200 bg-white p-4">
               <p className="text-sm text-stone-500">Quantidade de agendamentos</p>
               <p className="text-2xl font-bold text-stone-800">
                 {resumo.quantidade_agendamentos}
@@ -111,11 +111,11 @@ export default function RelatoriosPage() {
           </div>
 
           {resumo.por_barbeiro.length > 0 && (
-            <div className="rounded-lg border border-stone-200 bg-white">
+            <div className="rounded-xl border border-stone-200 bg-white">
               <h2 className="border-b border-stone-200 px-4 py-3 font-medium text-stone-800">
                 Por barbeiro
               </h2>
-              <table className="w-full text-left text-sm">
+              <table className="w-full text-left text-sm text-stone-800">
                 <thead>
                   <tr className="border-b border-stone-200 bg-stone-50">
                     <th className="px-4 py-2 font-medium text-stone-700">
@@ -133,7 +133,7 @@ export default function RelatoriosPage() {
                       className="border-b border-stone-100 last:border-0"
                     >
                       <td className="px-4 py-3">{b.barbeiro_nome}</td>
-                      <td className="px-4 py-3 font-medium text-amber-600">
+                      <td className="px-4 py-3 font-medium text-primary-dark">
                         R$ {b.total_reais}
                       </td>
                     </tr>

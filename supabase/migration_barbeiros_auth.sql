@@ -11,11 +11,11 @@ ALTER TABLE barbeiros
     CHECK (role IN ('admin', 'colaborador'));
 
 -- Atualizar o barbeiro Carlos para ser admin
--- Email: admin@conectabarber.com | Senha: admin123
+-- Email: admin@zaply.com | Senha: admin123
 -- IMPORTANTE: Troque a senha após o primeiro login em produção!
 UPDATE barbeiros
 SET
-  email = 'admin@conectabarber.com',
+  email = 'admin@zaply.com',
   senha_hash = '$2b$10$CkU/yAbvPVyXHOHwJls6M.wdpKiI.Ihrbrks1AvaPzbaupq6gw0za',
   role = 'admin'
 WHERE nome = 'Carlos'

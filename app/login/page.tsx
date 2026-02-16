@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -39,11 +40,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-stone-100 px-4">
-      <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-lg">
-        <div className="mb-8 text-center">
-          <h1 className="text-2xl font-bold text-stone-800">ConectaBarber</h1>
-          <p className="mt-1 text-sm text-stone-500">
+    <div className="flex min-h-screen items-center justify-center bg-stone-50 px-6">
+      <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-sm">
+        <div className="mb-8 flex flex-col items-center text-center">
+          <Image src="/logo.png" alt="Zaply" width={500} height={60} priority className="w-auto" />
+          <p className="text-sm text-stone-600">
             Painel do barbeiro
           </p>
         </div>
@@ -69,7 +70,7 @@ export default function LoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="email"
-              className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-800 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600"
+              className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
 
@@ -87,14 +88,14 @@ export default function LoginPage() {
               onChange={(e) => setSenha(e.target.value)}
               required
               autoComplete="current-password"
-              className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-800 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600"
+              className="w-full rounded-lg border border-stone-300 px-3 py-2 text-stone-800 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             />
           </div>
 
           <button
             type="submit"
             disabled={carregando}
-            className="w-full rounded-lg bg-amber-600 px-4 py-2.5 font-medium text-white transition hover:bg-amber-700 disabled:opacity-60"
+            className="btn-primary w-full px-4 py-2.5 font-medium text-white transition disabled:opacity-60"
           >
             {carregando ? "Entrando…" : "Entrar"}
           </button>

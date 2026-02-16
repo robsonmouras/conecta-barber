@@ -75,11 +75,11 @@ export default function BarbeirosPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-stone-800">Barbeiros</h1>
+        <h1 className="text-xl font-bold text-[#333333]" style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>Barbeiros</h1>
         <button
           type="button"
           onClick={() => setModalAberto(true)}
-          className="rounded-lg bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700"
+          className="btn-primary rounded-xl px-4 py-2 text-sm font-medium text-white"
         >
           + Novo barbeiro
         </button>
@@ -94,8 +94,8 @@ export default function BarbeirosPage() {
       {carregando ? (
         <p className="text-stone-500">Carregando…</p>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-stone-200 bg-white">
-          <table className="w-full text-left text-sm">
+        <div className="overflow-x-auto rounded-xl border border-stone-200 bg-white">
+          <table className="w-full text-left text-sm text-stone-800">
             <thead>
               <tr className="border-b border-stone-200 bg-stone-50">
                 <th className="px-4 py-3 font-medium text-stone-700">Nome</th>
@@ -115,7 +115,7 @@ export default function BarbeirosPage() {
                     <span
                       className={`inline rounded px-2 py-0.5 text-xs font-medium ${
                         b.role === "admin"
-                          ? "bg-amber-100 text-amber-800"
+                          ? "bg-primary-light text-primary-dark"
                           : "bg-stone-100 text-stone-700"
                       }`}
                     >
@@ -213,7 +213,7 @@ export default function BarbeirosPage() {
                 <button
                   type="submit"
                   disabled={salvando}
-                  className="flex-1 rounded-lg bg-amber-600 px-4 py-2 font-medium text-white hover:bg-amber-700 disabled:opacity-60"
+                  className="btn-primary flex-1 rounded-xl px-4 py-2 font-medium text-white disabled:opacity-60"
                 >
                   {salvando ? "Salvando…" : "Cadastrar"}
                 </button>

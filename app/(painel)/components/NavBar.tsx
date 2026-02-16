@@ -17,7 +17,7 @@ export function NavBar() {
     <nav className="flex items-center gap-4">
       <Link
         href="/agenda"
-        className="text-sm font-medium text-stone-600 hover:text-amber-600"
+        className="text-sm font-medium text-[#333333] hover:text-primary"
       >
         Agenda
       </Link>
@@ -25,19 +25,19 @@ export function NavBar() {
         <>
           <Link
             href="/barbeiros"
-            className="text-sm font-medium text-stone-600 hover:text-amber-600"
+            className="text-sm font-medium text-[#333333] hover:text-primary"
           >
             Barbeiros
           </Link>
           <Link
             href="/servicos"
-            className="text-sm font-medium text-stone-600 hover:text-amber-600"
+            className="text-sm font-medium text-[#333333] hover:text-primary"
           >
             Serviços
           </Link>
           <Link
             href="/relatorios"
-            className="text-sm font-medium text-stone-600 hover:text-amber-600"
+            className="text-sm font-medium text-[#333333] hover:text-primary"
           >
             Relatórios
           </Link>
